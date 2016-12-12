@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="page-header")
+      h1= title
+      a(type="button",class="btn btn-default",href="/photos/upload") 添加                 
+  div(class="row")
+      for photo in photos      
+          div(class="col-sm-6 col-md-4")
+              div(class="thumbnail")
+                  img(src=photo.path)
+                  div(class="caption")
+                      h3=photo.name
+
+                          a(class="pull-right btn del")
+                              i(class="fa fa-trash")
+                              input(type="hidden",value=photo._id)
+                          a(class="pull-right btn edit")
+                              i(class="fa fa-pencil")
+                              input(type="hidden",value=photo._id)
+  div(class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+    div(class="modal-dialog")
+      div(class="modal-content")
+  script(src="/javascripts/photos.js")                          
