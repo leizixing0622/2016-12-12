@@ -13,7 +13,7 @@ var photos = require('./routes/photos');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', '.ejs');
 //配置照片上传路径
 app.set('photos',__dirname + '/public/photos');
 
