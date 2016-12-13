@@ -14,6 +14,10 @@ $("#photoEdit").on('click',function(){
 	var urls = OL_Action_Root+"/edit?_id=";
 	comShowEdit(exampleTable,urls,"_id");
 })
+$("#photoView").on('click',function(){
+	var urls = OL_Action_Root+"/view?_id=";
+	comShowEdit(exampleTable,urls,"_id");
+})
 function modalAdd(id,url){
 	$("#"+id).modal();
 	$(".modal-content").load(url);

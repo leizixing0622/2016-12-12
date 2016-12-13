@@ -4,6 +4,7 @@ $("#image").change(function() {
     reader.readAsDataURL(file);
     reader.onload = function(e) {
         $("#nowImage").attr("src", this.result);
+        $(".file_image").val(this.result);
     };
 });
 var OL_Action_Root = "http://localhost:3000/photos";
@@ -21,7 +22,10 @@ function Req_ajax()
                         var res = data;
                         if(res[0] == 'success')
                         {
+
                             document.getElementById("status").innerHTML = "<span style='color:green'>文件上传成功！<br>文件名为："+res[1].filename+"</span>";
+                            alert("修改成功");
+                            history.go(0);    
                         }
                         else
                         {
